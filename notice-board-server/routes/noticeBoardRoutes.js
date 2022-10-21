@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const userController = require("../controllers/usersController");
+const noticeBoardController = require("../controllers/noticeBoardController");
 const verifyJWT = require("../middleware/verifyJWT");
 
 router.use(verifyJWT);
 
 router
   .route("/")
-  .get(userController.getAllUsers)
-  .post(userController.createNewUser);
+  .get(noticeBoardController.getAllPost)
+  .post(noticeBoardController.createNewPost)
+  .delete(noticeBoardController.deletePost);
 // .patch(userController.updateUser)
 // .delete(userController.deleteUser);
 
