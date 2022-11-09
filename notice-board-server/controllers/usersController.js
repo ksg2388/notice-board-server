@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
+const user = require("../models/user");
 
 // @desc Get all users
 // @route GET /user
@@ -51,7 +52,14 @@ const createNewUser = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc Update new user
+// @route Patch /user
+// @access Private
+// const updateUser = asyncHandler(async (req, res) => {
+// });
+
 module.exports = {
   getAllUsers,
   createNewUser,
+  // updateUser,
 };

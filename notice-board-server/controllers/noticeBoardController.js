@@ -5,7 +5,7 @@ const asyncHandler = require("express-async-handler");
 // @route GET /post
 // @access Private
 const getAllPost = asyncHandler(async (req, res) => {
-  const posts = await NoticeBoard.find().select("-title").lean();
+  const posts = await NoticeBoard.find().select("-_id").lean();
   if (!posts?.length) {
     return res.status(400).json({ message: "No Posts found" });
   }
