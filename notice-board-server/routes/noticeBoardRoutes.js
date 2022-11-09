@@ -7,7 +7,7 @@ router.use(verifyJWT);
 
 router
   .route("/")
-  .get(noticeBoardController.getAllPost)
+  .get(noticeBoardController.getPost)
   .post(noticeBoardController.createNewPost)
   .delete(noticeBoardController.deletePost);
 // .patch(userController.updateUser)
